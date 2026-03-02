@@ -1,0 +1,77 @@
+# === SECURITY: DO NOT COMMIT ===
+# PHP files may contain sensitive server config
+*.php
+
+# Backup archives - too large and may contain sensitive data
+*.zip
+*.rar
+backup-*.rar
+backup-*.zip
+bak*.zip
+
+# Server configuration
+App_Data/
+web.config
+
+# === OLD WEBSITE FILES (not needed for modern site) ===
+images-old/
+Scripts/
+SpryAssets/
+picture_library/
+
+# Old HTML pages
+about_us.html
+an_ayurvedic_concepts.html
+ayurvedic_concept.html
+ayurvedic_concept2.html
+ayurvedic_concepts.html
+contact.html
+donation.html
+enquiry_form.html
+error.html
+gallery.html
+immunity_&_sickle_cell_anaemia.html
+immunity_&_sickle_cell_anaemia2.html
+impotance_of_splenectomy_in_scd_patients.html
+index-old.html
+index1-old.html
+inhibiliting_functions_of_gene.html
+inhibiting_functions_of_gene.html
+multiple_drug_resistance.html
+profile.html
+reviews.html
+sickle_cell_introduction.html
+sickle_cell_introduction2.html
+sickle_cell_introduction3.html
+sickle_cell_introduction4.html
+sickle_cell_introduction5.html
+sickle_cell_introduction6.html
+sickle_cell_introduction7.html
+sickle_cell_introduction8.html
+test_certificate.html
+test_certificate2.html
+testimonials.html
+thanks.html
+videos.html
+
+# Old CSS/JS files
+cssmenuhorizontal.css
+menu_style.css
+thumbnailviewer.css
+thumbnailviewer.js
+
+# Duplicate image (already in images folder)
+redbloodcells.jpg
+
+# Documentation files (optional - remove these lines if you want to keep them)
+HERO-SECTION-FIXES.md
+IMPROVEMENTS.md
+QUICK-START.md
+README-NEW-WEBSITE.md
+
+# === SYSTEM FILES ===
+.DS_Store
+*.swp
+*.swo
+*~
+.env
