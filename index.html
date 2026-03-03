@@ -10,15 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="dna-loader">
+                <div class="strand"></div>
+                <div class="strand"></div>
+            </div>
+            <h3>Loading...</h3>
+        </div>
+    </div>
+
     <!-- Header & Navigation -->
     <header class="header">
         <nav class="navbar">
             <div class="container">
                 <div class="nav-wrapper">
                     <div class="logo">
-                        <img src="images/logo_03.png" alt="Veena Group of Hospitals">
+                        <img src="images/logo_03.png?v=2026" alt="Veena Group of Hospitals">
                         <div class="logo-text">
                             <h2>Sickle Cell Anaemia Treatment</h2>
                             <a href="#doctor" class="doctor-link">About the Doctor - Dr. Ashay Nandeshwar</a>
@@ -34,6 +48,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#treatment">Treatment</a></li>
                         <li><a href="#research">Research</a></li>
+                        <li><a href="#donate">Donate</a></li>
                         <li><a href="#testimonials">Reviews</a></li>
                         <li><a href="#videos">Videos</a></li>
                         <li><a href="#contact" class="btn-contact">Contact Us</a></li>
@@ -80,11 +95,13 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="hero-card">
-                        <i class="fas fa-microscope"></i>
-                        <h3>Evidence-Based Research</h3>
-                        <p>Scientifically documented morphological changes in RBC shape</p>
-                    </div>
+                    <a href="#research" class="hero-card-link">
+                        <div class="hero-card">
+                            <i class="fas fa-microscope"></i>
+                            <h3>Evidence-Based Research</h3>
+                            <p>Scientifically documented morphological changes in RBC shape</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -382,27 +399,27 @@
                 <div class="profile-info">
                     <span class="section-tag">Meet Your Doctor</span>
                     <h2>Dr. Ashay H. Nandeshwar</h2>
-                    <h3>M.D. (Ayu) - Ayurvedic Physician & Researcher</h3>
+                    <h3>M.D. (Ayurveda), Ph.D. - Ayurvedic Physician & Researcher</h3>
 
                     <div class="qualifications">
                         <div class="qual-item">
                             <i class="fas fa-graduation-cap"></i>
                             <div>
-                                <strong>M.D. (Ayurveda)</strong>
+                                <strong>M.D. (Ayurveda), Ph.D.</strong>
                                 <p>Podar Government Medical College, Mumbai</p>
                             </div>
                         </div>
                         <div class="qual-item">
                             <i class="fas fa-certificate"></i>
                             <div>
-                                <strong>P.G.D.M.L.T., L.Lb. (Sch)</strong>
+                                <strong>P.G.D.M.L.T</strong>
                                 <p>Post Graduate Diploma in Medical Laboratory Technology</p>
                             </div>
                         </div>
                         <div class="qual-item">
                             <i class="fas fa-chalkboard-teacher"></i>
                             <div>
-                                <strong>Lecturer</strong>
+                                <strong>Faculty</strong>
                                 <p>Vasantdada Patil Ayurvedic Medical College, Sangli</p>
                             </div>
                         </div>
@@ -603,6 +620,16 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="video-card">
+                    <div class="video-info">
+                        <h3>Doctor's Interview - Part 5</h3>
+                        <p>Dr. Ashay H. Nandeshwar discussing Sickle Cell Anaemia treatment and research.</p>
+                        <a href="https://www.youtube.com/watch?v=2xGe9bWZj4g" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-youtube"></i> Watch on YouTube
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -623,7 +650,12 @@
                         <i class="fas fa-hospital"></i>
                         <div>
                             <h4>Veena Group of Hospitals</h4>
-                            <p>Sangli, Maharashtra, India</p>
+                            <p>Flat Number 210, Anushka Plaza</p>
+                            <p>Teka Naka, Kamptee Rd</p>
+                            <p>Nagpur, Maharashtra 440026</p>
+                            <p><a href="https://share.google/8Q2a9vT0jt9JYgwlH" target="_blank" class="map-link">
+                                <i class="fas fa-map-marked-alt"></i> View on Google Maps
+                            </a></p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -708,6 +740,65 @@
         </div>
     </section>
 
+    <!-- Donations Section -->
+    <section class="donations" id="donate">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Support Our Mission</span>
+                <h2>Help Us Continue This Life-Saving Work</h2>
+                <p>Your support enables us to provide treatment to patients in need and continue vital research</p>
+            </div>
+
+            <div class="donation-content">
+                <div class="donation-info">
+                    <h3>Why Your Support Matters</h3>
+                    <div class="impact-items">
+                        <div class="impact-item">
+                            <i class="fas fa-heartbeat"></i>
+                            <p>Support patients who cannot afford treatment</p>
+                        </div>
+                        <div class="impact-item">
+                            <i class="fas fa-microscope"></i>
+                            <p>Fund ongoing research into Sickle Cell Anaemia treatment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donation-form-wrapper">
+                    <h3>Make a Donation</h3>
+                    <div class="donation-amounts">
+                        <button class="amount-btn" data-amount="500">₹500</button>
+                        <button class="amount-btn" data-amount="1000">₹1,000</button>
+                        <button class="amount-btn" data-amount="2000">₹2,000</button>
+                        <button class="amount-btn" data-amount="5000">₹5,000</button>
+                    </div>
+
+                    <div class="custom-amount">
+                        <label for="customAmount">Or enter custom amount:</label>
+                        <input type="number" id="customAmount" placeholder="₹" min="100">
+                    </div>
+
+                    <div class="payment-methods">
+                        <h4>Complete Your Donation</h4>
+                        <p class="payment-note">Call us to make your donation. We'll guide you through the process.</p>
+
+                        <div class="contact-donate">
+                            <a href="tel:+919224219153" class="btn btn-primary">
+                                <i class="fas fa-phone"></i> Call +91 922 421 9153
+                            </a>
+                            <p class="donation-timing">Available: Monday - Saturday, 10:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+                    <p class="donation-note">
+                        <i class="fas fa-shield-alt"></i>
+                        All donations support our mission to make Sickle Cell Anaemia treatment accessible to all patients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -736,14 +827,22 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Flat 210, Anushka Plaza, Teka Naka, Nagpur</p>
                     <p><i class="fas fa-phone"></i> +91 922 334 15 76</p>
                     <p><i class="fas fa-phone"></i> +91 976 688 32 08</p>
-                    <p><i class="fas fa-globe"></i> www.sicklecellanaemiatreatment.com</p>
+                    <p><a href="https://share.google/8Q2a9vT0jt9JYgwlH" target="_blank"><i class="fas fa-map-marked-alt"></i> View on Map</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Support Us</h3>
+                    <p>Help us continue our life-saving work</p>
+                    <a href="#donate" class="footer-donate-btn">
+                        <i class="fas fa-heart"></i> Make a Donation
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Sickle Cell Anaemia Treatment. All rights reserved.</p>
-                <p>Dr. Ashay H. Nandeshwar, M.D. (Ayu) | Veena Group of Hospitals</p>
+                <p>Dr. Ashay H. Nandeshwar, M.D. (Ayurveda), Ph.D. | Veena Group of Hospitals</p>
             </div>
         </div>
     </footer>

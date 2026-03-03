@@ -1,5 +1,15 @@
 // Modern JavaScript for Sickle Cell Anaemia Treatment Website
 
+// Page loader
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const loader = document.querySelector('.page-loader');
+        if (loader) {
+            loader.classList.add('hidden');
+        }
+    }, 800);
+});
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -102,22 +112,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Animate on Scroll
+    // Enhanced scroll-triggered animations with stagger
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const element = entry.target;
+
+                // Get stagger delay if element is in a grid
+                const siblings = Array.from(element.parentElement.children);
+                const index = siblings.indexOf(element);
+                const staggerDelay = index * 100; // 100ms between each
+
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0) scale(1)';
+                }, staggerDelay);
+
+                observer.unobserve(element);
             }
         });
     }, observerOptions);
 
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.feature-card, .method-card, .testimonial-card, .timeline-item');
+    // Observe feature cards with enhanced animation
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(60px) scale(0.9)';
+        card.style.transition = 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        observer.observe(card);
+    });
+
+    // Observe other elements for animation
+    const animatedElements = document.querySelectorAll('.method-card, .testimonial-card, .timeline-item');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -364,6 +395,82 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.transform = 'scale(1)';
     });
     document.body.appendChild(whatsappBtn);
+
+    // Professional ripple effect for buttons
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const ripple = document.createElement('span');
+        const rect = button.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = event.clientX - rect.left - size / 2;
+        const y = event.clientY - rect.top - size / 2;
+
+        ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            left: ${x}px;
+            top: ${y}px;
+            pointer-events: none;
+            transform: scale(0);
+            animation: rippleEffect 0.6s ease-out;
+        `;
+
+        button.style.position = 'relative';
+        button.style.overflow = 'hidden';
+        button.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
+    }
+
+    // Add ripple animation
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(rippleStyle);
+
+    // Apply to all buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', createRipple);
+    });
+
+    // Donation amount selection
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const customAmountInput = document.getElementById('customAmount');
+
+    amountButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove selected class from all buttons
+            amountButtons.forEach(b => b.classList.remove('selected'));
+
+            // Add selected class to clicked button
+            this.classList.add('selected');
+
+            // Clear custom amount
+            if (customAmountInput) {
+                customAmountInput.value = '';
+            }
+
+            // Get selected amount
+            const amount = this.dataset.amount;
+            console.log('Selected donation amount: ₹' + amount);
+        });
+    });
+
+    if (customAmountInput) {
+        customAmountInput.addEventListener('input', function() {
+            // Remove selected class from all buttons when custom amount is entered
+            amountButtons.forEach(b => b.classList.remove('selected'));
+        });
+    }
 
     // Review Form Submission
     const reviewForm = document.getElementById('reviewForm');
