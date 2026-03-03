@@ -1,15 +1,5 @@
 // Modern JavaScript for Sickle Cell Anaemia Treatment Website
 
-// Page loader
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        const loader = document.querySelector('.page-loader');
-        if (loader) {
-            loader.classList.add('hidden');
-        }
-    }, 800);
-});
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 
