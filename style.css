@@ -2112,6 +2112,28 @@ a:hover {
 
     section {
         overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Research section mobile fixes */
+    .research,
+    .research-content,
+    .research-text,
+    .research-visual {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Contact section mobile fixes */
+    .contact,
+    .contact-content,
+    .contact-info,
+    .contact-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-template-columns: 1fr !important;
     }
 
     /* Center all text content on mobile */
@@ -2124,13 +2146,25 @@ a:hover {
         text-align: center;
     }
 
-    /* Reset any negative margins */
+    /* Reset any negative margins and ensure all elements fit */
     * {
         margin-left: 0 !important;
+        box-sizing: border-box !important;
     }
 
     .logo {
         margin-left: 0 !important;
+    }
+
+    /* Ensure all inputs and forms fit within viewport */
+    input,
+    textarea,
+    select,
+    button,
+    .form-group,
+    .info-item {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .features-grid,
