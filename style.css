@@ -2052,12 +2052,17 @@ a:hover {
     }
 
     .hero-content {
+        grid-template-columns: 1fr;
         text-align: center;
-        max-width: 100%;
+    }
+
+    .hero-text {
+        text-align: center;
     }
 
     .hero-stats {
         grid-template-columns: 1fr;
+        text-align: center;
     }
 
     .hero-buttons {
@@ -2069,23 +2074,29 @@ a:hover {
         justify-content: center;
     }
 
-    section {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 var(--spacing-md);
-    }
-
-    * {
-        max-width: 100%;
-    }
-
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    /* Force all multi-column grids to single column on mobile */
+    .features-grid,
+    .treatment-methodology,
+    .testimonials-grid,
+    .research-grid,
+    .videos-grid,
+    .donation-amounts,
+    .contact-grid,
+    .footer-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Center all text content on mobile */
+    .section-header,
+    .feature-card,
+    .method-card,
+    .testimonial-card {
+        text-align: center;
     }
 
     .features-grid,
