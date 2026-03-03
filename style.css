@@ -2176,9 +2176,18 @@ a:hover {
     .feature-card,
     .method-card,
     .testimonial-card,
-    .research-content,
-    .contact-content {
+    .research-content {
         text-align: center;
+    }
+
+    /* Keep contact info items left-aligned for uniformity */
+    .contact-info,
+    .info-item {
+        text-align: left !important;
+    }
+
+    .contact-form {
+        text-align: left;
     }
 
     /* Reset any negative margins and ensure all elements fit */
