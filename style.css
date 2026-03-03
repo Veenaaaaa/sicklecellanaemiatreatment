@@ -2099,15 +2099,38 @@ a:hover {
     .about-content,
     .profile-content,
     .donation-content,
-    .diet-cards {
+    .diet-cards,
+    .research-highlights,
+    .profile-highlights,
+    .footer-links {
         grid-template-columns: 1fr !important;
+        min-width: 0 !important;
+    }
+
+    /* Ensure all cards, boxes and items fit within viewport */
+    .method-card,
+    .highlight-box,
+    .info-item,
+    .feature-card,
+    .video-card,
+    .result-card,
+    .form-group,
+    .contact-form,
+    .research-visual {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
     }
 
     /* Ensure proper container width on mobile */
     .container {
         margin: 0 auto;
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
     }
 
     section {
