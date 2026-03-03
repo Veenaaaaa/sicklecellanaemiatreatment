@@ -2084,19 +2084,48 @@ a:hover {
     .treatment-methodology,
     .testimonials-grid,
     .research-grid,
+    .research-content,
     .videos-grid,
     .donation-amounts,
     .contact-grid,
-    .footer-content {
+    .contact-content,
+    .contact-info,
+    .footer-content,
+    .about-content,
+    .profile-content,
+    .donation-content,
+    .diet-cards {
         grid-template-columns: 1fr !important;
+    }
+
+    /* Ensure proper container width on mobile */
+    .container {
+        margin: 0 auto;
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    section {
+        overflow-x: hidden;
     }
 
     /* Center all text content on mobile */
     .section-header,
     .feature-card,
     .method-card,
-    .testimonial-card {
+    .testimonial-card,
+    .research-content,
+    .contact-content {
         text-align: center;
+    }
+
+    /* Reset any negative margins */
+    * {
+        margin-left: 0 !important;
+    }
+
+    .logo {
+        margin-left: 0 !important;
     }
 
     .features-grid,
