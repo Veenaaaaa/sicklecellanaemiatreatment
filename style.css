@@ -2054,6 +2054,22 @@ a:hover {
         background-size: cover;
         background-repeat: no-repeat;
         padding: 140px 0 80px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        filter: blur(0.3px);
+        -webkit-filter: blur(0.3px);
+    }
+
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(0.5px);
+        z-index: -1;
     }
 
     .hero-content {
