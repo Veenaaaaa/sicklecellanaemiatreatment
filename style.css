@@ -49,6 +49,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -1978,6 +1979,14 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+    .logo {
+        margin-left: 0;
+    }
+
+    .navbar .container {
+        padding: 0 var(--spacing-sm);
+    }
+
     .logo img {
         height: 60px;
     }
